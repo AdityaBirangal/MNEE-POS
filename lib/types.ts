@@ -3,7 +3,7 @@
  */
 export interface Invoice {
   id: string;
-  amount: string; // Amount in MNEE (6 decimals, e.g., "1000000" = $1.00)
+  amount: string; // Amount in MNEE (18 decimals, e.g., "1000000000000000000" = $1.00)
   currency: string; // "MNEE"
   status: "pending" | "paid";
   merchantAddress: string; // Receiver address (merchant)

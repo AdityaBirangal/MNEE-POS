@@ -202,8 +202,8 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
     );
   }
 
-  // Convert MNEE amount to dollars for display
-  const amountDollars = invoice ? (parseInt(invoice.amount) / 1000000).toFixed(2) : "0.00";
+  // Convert MNEE amount to dollars for display (18 decimals)
+  const amountDollars = invoice ? (parseInt(invoice.amount) / 10 ** 18).toFixed(2) : "0.00";
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#f9fafb", padding: "1rem 0 2rem" }}>

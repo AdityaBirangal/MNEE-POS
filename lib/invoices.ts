@@ -21,8 +21,8 @@ if (!globalThis.__invoiceStore) {
 }
 
 /**
- * Convert dollar amount to MNEE units (with 6 decimals)
- * Example: 1.00 -> "1000000"
+ * Convert dollar amount to MNEE units (with 18 decimals)
+ * Example: 1.00 -> "1000000000000000000"
  */
 export function dollarsToMNEE(amount: number): string {
   return Math.floor(amount * 10 ** MNEE_DECIMALS).toString();

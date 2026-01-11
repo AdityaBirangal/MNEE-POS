@@ -107,7 +107,7 @@ function InvoiceDetailsContent({ invoiceId }: { invoiceId: string }) {
     );
   }
 
-  const amountDollars = (parseInt(invoice.amount) / 1000000).toFixed(2);
+  const amountDollars = (parseInt(invoice.amount) / 10 ** 18).toFixed(2);
   const paymentUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL || window.location.origin}/pay/${invoiceId}`;
 
   return (
