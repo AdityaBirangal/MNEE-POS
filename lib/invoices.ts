@@ -1,5 +1,5 @@
 /**
- * Invoice utility functions for MNEE POS
+ * Invoice utility functions for MNEE POS x402
  * 
  * Helper functions for invoice amount conversion and formatting.
  */

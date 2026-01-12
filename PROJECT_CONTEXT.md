@@ -1,8 +1,8 @@
-# MNEE POS - Complete Project Context
+# MNEE POS x402 - Complete Project Context
 
 ## Project Overview
 
-**MNEE POS** is a point-of-sale (POS) application that enables merchants to accept instant MNEE stablecoin payments using the **x402 HTTP-402 payment protocol** on **Sepolia Testnet**. This project was built for the MNEE Hackathon under the "Commerce & Creator Tools" category.
+**MNEE POS x402** is a point-of-sale (POS) application that enables merchants to accept instant MNEE stablecoin payments using the **x402 HTTP-402 payment protocol** on **Sepolia Testnet**. This project was built for the MNEE Hackathon under the "Commerce & Creator Tools" category.
 
 ### Key Features
 - ✅ Invoice creation with custom amounts
@@ -578,4 +578,4 @@ npm run start            # Start production server
 
 ---
 
-This document provides comprehensive context about the MNEE POS project. Use it to understand the architecture, implementation details, and how all components work together.
+This document provides comprehensive context about the MNEE POS x402 project. Use it to understand the architecture, implementation details, and how all components work together.

@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Invoice model for MNEE POS
+// Invoice model for MNEE POS x402
 // Stores invoice data with payment status and transaction information
 // Note: Using String for status (could use enum in PostgreSQL, but keeping simple for compatibility)
 model Invoice {

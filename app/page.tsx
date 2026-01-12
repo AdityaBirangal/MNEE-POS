@@ -1,5 +1,5 @@
 /**
- * MNEE POS - Merchant Dashboard
+ * MNEE POS x402 - Merchant Dashboard
  * Mobile-first POS interface for creating invoices and viewing payment status
  */
 "use client";
@@ -101,7 +101,7 @@ function HomeContent() {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
                 <img 
                   src="/MNEE_Logo.png" 
-                  alt="MNEE POS" 
+                  alt="MNEE POS x402" 
                   style={{ width: "3.5rem", height: "3.5rem", borderRadius: "10px" }}
                 />
                 <h1 className="text-title" style={{ 
@@ -110,7 +110,7 @@ function HomeContent() {
                   WebkitTextFillColor: "transparent",
                   margin: 0
                 }}>
-                  MNEE POS
+                  MNEE POS x402
                 </h1>
               </div>
               <p className="text-small" style={{ textAlign: "center" }}>

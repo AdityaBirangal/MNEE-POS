@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="public/MNEE_Logo.png" alt="MNEE POS Logo" width="120" height="120">
+  <img src="public/MNEE_Logo.png" alt="MNEE POS x402 Logo" width="120" height="120">
   
-  # MNEE POS
+  # MNEE POS x402
   
   A point-of-sale application that lets merchants accept instant MNEE stablecoin payments using the x402 HTTP-402 payment protocol on Sepolia testnet.
   
@@ -21,7 +21,7 @@
 
 ## Overview
 
-MNEE POS enables merchants to:
+MNEE POS x402 enables merchants to:
 - Create invoices with custom amounts
 - Generate payment URLs and QR codes
 - Accept MNEE stablecoin payments via x402 protocol

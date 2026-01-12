@@ -1,6 +1,6 @@
 {
-  "name": "MNEE POS",
-  "short_name": "MNEE POS",
+  "name": "MNEE POS x402",
+  "short_name": "MNEE POS x402",
   "description": "Point-of-sale system for accepting MNEE stablecoin payments using x402 on Ethereum",
   "start_url": "/",
   "display": "standalone",

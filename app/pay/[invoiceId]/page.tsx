@@ -228,7 +228,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
                     <img 
                       src="/MNEE_Logo.png" 
-                      alt="MNEE POS" 
+                      alt="MNEE POS x402" 
                       style={{ width: "2.25rem", height: "2.25rem", borderRadius: "6px" }}
                     />
                     <h2 className="text-heading" style={{ fontSize: "1.5rem", margin: 0 }}>
@@ -236,7 +236,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                     </h2>
                   </div>
                   <p className="text-small" style={{ color: "#6b7280" }}>
-                    MNEE POS - MNEE Stablecoin Payment
+                    MNEE POS x402 - MNEE Stablecoin Payment
                   </p>
                 </div>
 
@@ -423,7 +423,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
                   <img 
                     src="/MNEE_Logo.png" 
-                    alt="MNEE POS" 
+                    alt="MNEE POS x402" 
                     style={{ width: "3.5rem", height: "3.5rem", borderRadius: "10px" }}
                   />
                   <h1 className="text-title" style={{ 
@@ -432,7 +432,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                     WebkitTextFillColor: "transparent",
                     margin: 0
                   }}>
-                    MNEE POS Payment
+                    MNEE POS x402 Payment
                   </h1>
                 </div>
                 <p className="text-small">Pay with MNEE stablecoin using x402 on Sepolia</p>

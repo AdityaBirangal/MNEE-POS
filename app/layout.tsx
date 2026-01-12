@@ -9,7 +9,7 @@ const client = createThirdwebClient({
 });
 
 export const metadata: Metadata = {
-  title: "MNEE POS - MNEE Stablecoin Payment System",
+  title: "MNEE POS x402 - MNEE Stablecoin Payment System",
   description: "Point-of-sale system for accepting MNEE stablecoin payments using x402 on Ethereum",
   manifest: "/manifest.json",
   icons: {
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     shortcut: "/MNEE_Logo.png",
   },
   openGraph: {
-    title: "MNEE POS - MNEE Stablecoin Payment System",
+    title: "MNEE POS x402 - MNEE Stablecoin Payment System",
     description: "Point-of-sale system for accepting MNEE stablecoin payments using x402 on Ethereum",
     images: ["/MNEE_Logo.png"],
   },
   twitter: {
     card: "summary",
-    title: "MNEE POS - MNEE Stablecoin Payment System",
+    title: "MNEE POS x402 - MNEE Stablecoin Payment System",
     description: "Point-of-sale system for accepting MNEE stablecoin payments using x402 on Ethereum",
     images: ["/MNEE_Logo.png"],
   },

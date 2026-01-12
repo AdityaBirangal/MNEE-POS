@@ -1,5 +1,5 @@
 /**
- * Invoice data model for MNEE POS
+ * Invoice data model for MNEE POS x402
  */
 export interface Invoice {
   id: string;

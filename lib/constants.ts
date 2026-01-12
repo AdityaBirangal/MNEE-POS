@@ -1,5 +1,5 @@
 /**
- * Network and Token Constants for MNEE POS
+ * Network and Token Constants for MNEE POS x402
  * 
  * Configuration for Sepolia Testnet:
  * - Chain ID: 11155111 (Sepolia Testnet)

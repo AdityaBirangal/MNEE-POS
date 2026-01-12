@@ -1,5 +1,5 @@
 /**
- * Payment Utilities for MNEE POS
+ * Payment Utilities for MNEE POS x402
  * 
  * Handles signature normalization for Ethereum compatibility.
  * 

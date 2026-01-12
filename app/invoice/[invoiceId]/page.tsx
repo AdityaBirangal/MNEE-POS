@@ -127,7 +127,7 @@ function InvoiceDetailsContent({ invoiceId }: { invoiceId: string }) {
                   <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.25rem" }}>
                     <img 
                       src="/MNEE_Logo.png" 
-                      alt="MNEE POS" 
+                      alt="MNEE POS x402" 
                       style={{ width: "2.75rem", height: "2.75rem", borderRadius: "8px" }}
                     />
                     <h1 className="text-title" style={{ 
@@ -137,7 +137,7 @@ function InvoiceDetailsContent({ invoiceId }: { invoiceId: string }) {
                       margin: 0,
                       fontSize: "1.5rem"
                     }}>
-                      MNEE POS
+                      MNEE POS x402
                     </h1>
                   </div>
                   <p className="text-small" style={{ color: "#6b7280" }}>
