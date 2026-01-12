@@ -432,7 +432,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                     WebkitTextFillColor: "transparent",
                     margin: 0
                   }}>
-                    MNEE POS x402 Payment
+                    MNEE POS x402
                   </h1>
                 </div>
                 <p className="text-small">Pay with MNEE stablecoin using x402 on Sepolia</p>

@@ -11,6 +11,7 @@ import { ConnectButton, useActiveWallet } from "thirdweb/react";
 import StatusBadge from "@/app/components/StatusBadge";
 import QRCodeCard from "@/app/components/QRCodeCard";
 import Toast, { ToastType } from "@/app/components/Toast";
+import Header from "@/app/components/Header";
 
 // Initialize Thirdweb client
 const client = createThirdwebClient({
@@ -119,53 +120,7 @@ function InvoiceDetailsContent({ invoiceId }: { invoiceId: string }) {
         }}
       >
         {/* Header */}
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-10" style={{ marginTop: "1rem" }}>
-          <div className="container">
-            <div className="py-4">
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.25rem" }}>
-                    <img 
-                      src="/MNEE_Logo.png" 
-                      alt="MNEE POS x402" 
-                      style={{ width: "2.75rem", height: "2.75rem", borderRadius: "8px" }}
-                    />
-                    <h1 className="text-title" style={{ 
-                      background: "linear-gradient(135deg, var(--color-amber-400) 0%, var(--color-amber-600) 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      margin: 0,
-                      fontSize: "1.5rem"
-                    }}>
-                      MNEE POS x402
-                    </h1>
-                  </div>
-                  <p className="text-small" style={{ color: "#6b7280" }}>
-                  Accept MNEE stablecoin payments with x402 on Sepolia
-                  </p>
-                </div>
-                <button
-                  onClick={() => router.push("/")}
-                  style={{
-                    backgroundColor: "#f3f4f6",
-                    color: "#374151",
-                    padding: "0.5rem 1rem",
-                    fontSize: "0.875rem",
-                    borderRadius: "0.5rem",
-                    border: "none",
-                    cursor: "pointer",
-                    whiteSpace: "nowrap",
-                    width: "auto",
-                    minWidth: "auto",
-                    flexShrink: 0
-                  }}
-                >
-                  ← Back
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header showBackButton={true} backButtonText="← Back" />
 
         <main className="container mt-6">
           {/* QR Code - Displayed First */}
