@@ -3,7 +3,7 @@
   
   # MNEE POS
   
-  A point-of-sale application that lets merchants accept instant MNEE stablecoin payments using the x402 HTTP-402 payment protocol on Ethereum.
+  A point-of-sale application that lets merchants accept instant MNEE stablecoin payments using the x402 HTTP-402 payment protocol on Sepolia testnet.
   
   **MNEE Hackathon: Programmable Money for Agents, Commerce, and Automated Finance**
 </div>
@@ -13,7 +13,7 @@
 ## Links
 
 - **GitHub**: [https://github.com/AdityaBirangal/MNEE-POS](https://github.com/AdityaBirangal/MNEE-POS)
-- **MNEE Contract**: `0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF` on Ethereum
+- **MNEE Contract**: `0x2F039630031C2C56E40bB9Ff729504E016765730` on Sepolia Testnet
 - **Learn more about MNEE**: [https://mnee.io](https://mnee.io)
 - **Hackathon**: [https://mnee-eth.devpost.com](https://mnee-eth.devpost.com)
 
@@ -39,8 +39,8 @@ The application uses **Thirdweb's x402 SDK** for payment processing, which handl
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Payment Protocol**: x402 HTTP 402 (via Thirdweb SDK v5)
-- **Blockchain**: Ethereum Mainnet
-- **Token**: MNEE (6 decimals, contract: `0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF`)
+- **Blockchain**: Sepolia Testnet
+- **Token**: MNEE (6 decimals, contract: `0x2F039630031C2C56E40bB9Ff729504E016765730`)
 - **Wallet Integration**: Thirdweb React SDK
 - **Storage**: PostgreSQL (via Prisma)
 
@@ -50,7 +50,7 @@ The application uses **Thirdweb's x402 SDK** for payment processing, which handl
 
 - Node.js 18+ and npm
 - Thirdweb account (for Client ID and Secret Key)
-- Ethereum mainnet wallet with MNEE for testing
+- Sepolia testnet wallet with MNEE for testing
 - Facilitator wallet (ERC4337 Smart Account) with ETH for gas
 
 ### Installation
@@ -98,7 +98,7 @@ Open [http://localhost:3000](http://localhost:3000)
 - ✅ Wallet integration (Thirdweb)
 - ✅ Modern, responsive UI
 - ✅ Database persistence (PostgreSQL)
-- ✅ MNEE stablecoin integration on Ethereum
+- ✅ MNEE stablecoin integration on Sepolia Testnet
 
 ## Hackathon Category
 

@@ -114,7 +114,7 @@ function HomeContent() {
                 </h1>
               </div>
               <p className="text-small" style={{ textAlign: "center" }}>
-                Accept MNEE stablecoin payments with x402 on Ethereum
+                Accept MNEE stablecoin payments with x402 on Sepolia
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ function HomeContent() {
                     client={client}
                     detailsButton={{
                       displayBalanceToken: {
-                        1: MNEE_ADDRESS, // Chain ID for Ethereum Mainnet
+                        11155111: MNEE_ADDRESS, // Chain ID for Sepolia Testnet
                       },
                     }}
                   />

@@ -366,7 +366,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
                         <span className="text-small" style={{ color: "#6b7280" }}>Network:</span>
                         <span className="text-body" style={{ fontWeight: "500" }}>
-                          Ethereum Mainnet
+                          Sepolia Testnet
                         </span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -435,7 +435,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                     MNEE POS Payment
                   </h1>
                 </div>
-                <p className="text-small">Pay with MNEE stablecoin using x402 on Ethereum</p>
+                <p className="text-small">Pay with MNEE stablecoin using x402 on Sepolia</p>
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "2rem" }}>
@@ -479,7 +479,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
                     client={client}
                     detailsButton={{
                       displayBalanceToken: {
-                        1: MNEE_ADDRESS, // Chain ID for Ethereum Mainnet
+                        11155111: MNEE_ADDRESS, // Chain ID for Sepolia Testnet
                       },
                     }}
                   />
@@ -523,7 +523,7 @@ function PaymentPageContent({ invoiceId }: { invoiceId: string }) {
               </button>
 
               <p className="text-small" style={{ marginTop: "1rem", textAlign: "center", color: "#6b7280" }}>
-                Make sure your wallet is connected to Ethereum mainnet
+                Make sure your wallet is connected to Sepolia testnet
               </p>
             </>
           )}

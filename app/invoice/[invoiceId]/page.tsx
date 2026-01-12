@@ -141,7 +141,7 @@ function InvoiceDetailsContent({ invoiceId }: { invoiceId: string }) {
                     </h1>
                   </div>
                   <p className="text-small" style={{ color: "#6b7280" }}>
-                  Accept MNEE stablecoin payments with x402 on Ethereum
+                  Accept MNEE stablecoin payments with x402 on Sepolia
                   </p>
                 </div>
                 <button

@@ -22,7 +22,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { settlePayment, facilitator } from "thirdweb/x402";
 import { createThirdwebClient } from "thirdweb";
-import { ethereum } from "thirdweb/chains";
+import { sepolia } from "thirdweb/chains";
 import { getInvoiceById, markInvoicePaid } from "@/lib/invoiceRepository";
 import { MNEE_ADDRESS, MNEE_DECIMALS, ETHEREUM_CHAIN_ID } from "@/lib/constants";
 
@@ -107,26 +107,47 @@ export async function GET(
 
     // Use Thirdweb's settlePayment to handle the x402 protocol
     // EIP712 configuration for MNEE token:
-    // - name: Token name for EIP712 domain
-    // - version: EIP712 domain version (typically "1" for ERC20 tokens)
-    // - primaryType: Signature type - "Permit" (ERC-2612) or "TransferWithAuthorization" (ERC-3009)
-    // Currently using "TransferWithAuthorization" (ERC-3009) as it's more commonly supported
-    // If this doesn't work, try changing to "Permit" (ERC-2612)
+    // - name: Token name for EIP712 domain (must match contract's name() exactly)
+    // - version: EIP712 domain version (typically "1" for ERC20 tokens, verify on contract)
+    // - primaryType: "Permit" (ERC-2612) - Contract supports ERC-2612 Permit, not ERC-3009
+    // 
+    // NOTE: If payment_simulation_failed occurs, verify EIP712 domain parameters match the contract:
+    // 1. Check token name() on Etherscan - must match exactly (case-sensitive)
+    // 2. Check EIP712 version - query DOMAIN_SEPARATOR or check contract code
+    // 3. Ensure contract supports ERC-2612 permit() function
+    
+    // Allow EIP712 parameters to be overridden via environment variables for debugging
+    const eip712Name = process.env.MNEE_EIP712_NAME || "USDA";
+    const eip712Version = process.env.MNEE_EIP712_VERSION || "1";
+    
+    console.log(`💰 Payment configuration:`, {
+      amount: invoice.amount,
+      payTo: invoice.merchantAddress,
+      contract: MNEE_ADDRESS,
+      decimals: MNEE_DECIMALS,
+      chainId: sepolia.id,
+      eip712: {
+        name: eip712Name,
+        version: eip712Version,
+        primaryType: "Permit",
+      },
+    });
+    
     const result = await settlePayment({
       resourceUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000"}/api/pay/${invoiceId}`,
       method: "GET",
       paymentData,
       payTo: invoice.merchantAddress,
-      network: ethereum,
+      network: sepolia,
       price: {
         amount: invoice.amount,
         asset: {
           address: MNEE_ADDRESS,
           decimals: MNEE_DECIMALS,
           eip712: {
-            name: "MNEE",
-            version: "1",
-            primaryType: "TransferWithAuthorization" as const, // ERC-3009 (used by USDC-like tokens)
+            name: eip712Name,
+            version: eip712Version,
+            primaryType: "Permit" as const, // ERC-2612 (contract supports Permit, not TransferWithAuthorization)
           },
         },
       },
@@ -256,16 +277,48 @@ export async function GET(
     if (error instanceof Error) {
       console.error("Error message:", error.message);
       console.error("Error stack:", error.stack);
+      
+      // Check for simulation failure specifically
+      if (error.message.includes("payment_simulation_failed") || error.message.includes("simulation")) {
+        console.error("🔍 Payment simulation failed. Possible causes:");
+        console.error("  - EIP712 domain parameters (name/version) don't match contract");
+        console.error("  - Contract doesn't support Permit with these parameters");
+        console.error("  - Insufficient balance or allowance");
+        console.error("  - Invalid amount format");
+        
+        // Try to extract more details from error
+        const errorDetails: any = {
+          message: error.message,
+          invoiceId: invoice?.id || "unknown",
+          amount: invoice?.amount || "unknown",
+          contract: MNEE_ADDRESS,
+          chainId: sepolia.id,
+        };
+        
+        // Check if error has additional properties
+        if ('cause' in error && error.cause) {
+          errorDetails.cause = error.cause;
+        }
+        if ('reason' in error) {
+          errorDetails.reason = (error as any).reason;
+        }
+        
+        console.error("📋 Error details:", JSON.stringify(errorDetails, null, 2));
+      }
     }
     
     // Return more detailed error information
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const isSimulationError = errorMessage.includes("payment_simulation_failed") || errorMessage.includes("simulation");
+    
     return NextResponse.json(
       { 
         error: "Failed to process payment",
         details: errorMessage,
         invoiceId: invoice?.id || "unknown",
-        hint: "This might indicate that MNEE token doesn't support ERC-2612 Permit or ERC-3009 TransferWithAuthorization. Check the token contract on Etherscan."
+        hint: isSimulationError 
+          ? "Payment simulation failed. This may indicate EIP712 domain parameters (name/version) don't match the contract, or the contract configuration is incorrect. Verify the token name and EIP712 version on Sepolia."
+          : "The contract supports ERC-2612 Permit. If payment fails, check wallet connection and ensure sufficient MNEE balance on Sepolia testnet."
       },
       { status: 500 }
     );

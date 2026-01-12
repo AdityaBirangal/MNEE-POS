@@ -1,19 +1,19 @@
 /**
  * Network and Token Constants for MNEE POS
  * 
- * Configuration for Ethereum Mainnet:
- * - Chain ID: 1 (Ethereum Mainnet)
- * - MNEE Contract: 0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF
+ * Configuration for Sepolia Testnet:
+ * - Chain ID: 11155111 (Sepolia Testnet)
+ * - MNEE Contract: 0x2F039630031C2C56E40bB9Ff729504E016765730
  * - MNEE Decimals: 6 (USD-backed stablecoin, similar to USDC)
  * 
  * MNEE is a USD-backed stablecoin live on Ethereum.
  * Learn more at https://mnee.io
  */
-export const ETHEREUM_CHAIN_ID = 1;
+export const ETHEREUM_CHAIN_ID = 11155111;
 
-// MNEE token address on Ethereum mainnet
-// Contract: 0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF
-export const MNEE_ADDRESS = "0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF" as `0x${string}`;
+// MNEE token address on Sepolia testnet
+// Contract: 0x2F039630031C2C56E40bB9Ff729504E016765730
+export const MNEE_ADDRESS = "0x2F039630031C2C56E40bB9Ff729504E016765730" as `0x${string}`;
 
 // MNEE has 6 decimals (USD-backed stablecoin)
 export const MNEE_DECIMALS = 6;

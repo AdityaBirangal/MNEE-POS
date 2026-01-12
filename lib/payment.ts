@@ -4,9 +4,9 @@
  * Handles signature normalization for Ethereum compatibility.
  * 
  * Background:
- * - Ethereum uses EIP-155 with chain ID 1 (mainnet)
+ * - Sepolia Testnet uses EIP-155 with chain ID 11155111
  * - Signature `v` values need to be normalized for proper verification
- * - This is required for x402 payment signatures to work correctly on Ethereum
+ * - This is required for x402 payment signatures to work correctly on Sepolia
  * 
  * The normalization adjusts the signature `v` value based on the chain ID
  * to ensure compatibility with Ethereum's signature verification.
